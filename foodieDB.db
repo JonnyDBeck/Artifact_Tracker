@@ -1,0 +1,44 @@
+DROP DATABASE IF EXISTS foodieTracker_db;
+-- Creates the "foodieTracker_db" database --
+CREATE DATABASE foodieTracker_db;
+
+-- Makes it so all of the following code will affect inventory_db --
+USE foodieTracker_db;
+
+-- Creates the table "produce" within foodieTracker_db --
+CREATE TABLE restaurant (
+  -- Creates a numeric column called "id" which will automatically increment its default value as we create new rows --
+  id INT NOT NULL,
+  -- Makes a string column called "name" which cannot contain null --
+  name VARCHAR(100) NOT NULL
+  -- Makes a column called "address" which cannot contain a null --
+  -- Need to figure out address validation or decide to make string --
+  address VARCHAR(100) NOT NULL
+);
+CREATE TABLE review (
+  -- Creates a numeric column called "review_id" which will automatically increment its default value as we create new rows --
+  review_id INT NOT NULL
+  -- Makes a column called "reviewer" which cannot contain null --
+  -- Can we make foreign key to user table --
+  reviewer VARCHAR (100) NOT NULL
+  -- Create star rating called "rating" for restaurant rating --
+  -- Need to limit to 1-5 stars --
+  rating INT NOT NULL 
+  -- Makes column called "dateOfVisit"-- 
+  dateOfVisit DATE NOT NULL
+  -- Creates picklist of "nutritionConcerns" such as vegan, gluten free or other nutritional concern items available --
+  -- Need to create picklist --
+  nutritionConcerns ....FILL OUT MORE STUFF
+  -- Creates picklist of "cuisine" types -- 
+  cuisine .... FILL OUT MORE STUFF
+
+)
+
+
+CREATE TABLE foodie (
+  -- Creates a numeric column called "foodie_id" which will automatically increment --
+ foodie_id INT NOT NULL
+ -- Creates an alphanumeric column called "foodieName" which must be unique --
+ foodieName varchar(50) NOT NULL 
+ -- Creates an alphanumeric column called "foodEmail" which must be unique --
+)
