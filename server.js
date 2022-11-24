@@ -14,6 +14,7 @@ const hbs = exphbs.create(
 
 );
 
+app.use(express.static('public'));
 
 const sess = {
     secret: 'Demo Secret',
