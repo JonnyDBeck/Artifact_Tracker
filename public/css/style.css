@@ -78,7 +78,7 @@ padding: 10px 0;
 }
 
 
-
+/* PHOTO CAROUSEL CSS STYLING: */
 
 * {box-sizing:border-box}
 
@@ -167,3 +167,99 @@ padding: 10px 0;
   from {opacity: .4}
   to {opacity: 1}
 }
+
+
+/* STYLING FOR SEARCH BAR */
+/*
+* {
+    box-sizing:border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+   Style the search field 
+  form.searchbar input[type=text] {
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 20%;
+    height: 42px;
+    background: var(--scuffeddarkgrey-text-color);
+  }
+  
+  /* Style the submit button */
+  /* form.searchbar button {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 5%;
+    height: 42px;
+    padding: 10px;
+    background: var(--vanillagray-color);
+    color: var(--scuffeddarkgrey-text-color);
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    /* cursor: pointer; */
+  /* } 
+  
+  form.searchbar button:hover {
+    background: var(--simpler-lime-green);
+  }
+  
+  /* Clear floats */
+  /* form.searchbar::after {
+    content: "";
+    clear: both;
+    display: block;
+  } */
+
+  /* #home-search {
+    position: relative;
+    margin-left: auto; */
+
+  /* }  */
+
+  
+  /*Nick's search bar */
+
+  #home-search-area {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: 95px;
+
+  margin: 20px 0 20px 0;
+}
+
+#home-search {
+  width: 250px;
+  height: 42px;
+
+  background-color: var(--scuffeddarkgrey-text-color);
+  border: 1px solid grey;
+  color: lightgray;
+}
+
+#home-submit {
+  width: 60px;
+  height: 42px;
+  cursor: pointer;
+  background-color: var(--scuffeddarkgrey-text-color);
+  border: 1px solid grey;
+  color: gray;
+}
+
+#home-submit button:hover {
+  background: var(--simpler-lime-green);
+}
+
+#home-search::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
