@@ -1,3 +1,7 @@
+var homeSubmitButton = document.getElementById("home-submit");
+
+var searchParam = document.getElementById("home-search");
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -23,4 +27,18 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+}
+
+function autoIncrementSlides() {
+    setInterval(() => {
+        plusSlides(1);
+    }, 3000);
+}
+
+autoIncrementSlides();
+
+function renderSearch () {
+   window.location.href = "/results?location=" + searchParam.value 
 };
+
+homeSubmitButton.addEventListener("click", renderSearch)
