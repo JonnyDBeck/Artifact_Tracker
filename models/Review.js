@@ -30,7 +30,7 @@ Review.init(
       },
       Imageurl: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       },
       Foodie_User: {
         type: DataTypes.STRING,
