@@ -4,6 +4,10 @@ router.get('/', async (req, res) => {
 
     res.render('homepage') })
 
+router.get('/login', async (req, res) => { 
+
+    res.render('login') })
+
 router.get('/results', async (req, res) => { 
     console.log("params", req.query)
 
