@@ -1,18 +1,42 @@
+const { Resturant } = require('../models');
+
 const router = require('express').Router();
 
-router.get('/', async (req, res) => { 
+router.get('/', async (req, res) => {
 
-    res.render('homepage') })
+    res.render('homepage');
+
+});
 
 
 
-router.get('/results', async (req, res) => { 
+router.get('/results', async (req, res) => {
     console.log("params", req.query)
 
-    const requestedLocation = req.query.location
-    
+    try {
+        const restData = await Resturant.findAll({
+            where:
+            {
+                City: req.query.city,
+                State: req.query.state
+            },
+        });
 
+        const restaurant = restData.map(Restaurant => Restaurant.get({ plain: true }));
+        console.log(restaurant);
 
+        res.render('results'
+            // , {
+            //   ...restaurant,
+            //   logged_in: req.session.logged_in
+            // }
+        );
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+<<<<<<< HEAD
     res.render('results') })
 
     router.get('/results', async (req, res) => { 
@@ -41,4 +65,6 @@ router.get('/results', async (req, res) => {
         }
     });
     
+=======
+>>>>>>> c3408c1dbd4bdc0a966330090b9300c7ada282a1
 module.exports = router;

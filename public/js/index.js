@@ -17,28 +17,34 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
 function autoIncrementSlides() {
-    setInterval(() => {
-        plusSlides(1);
-    }, 3000);
+  setInterval(() => {
+    plusSlides(1);
+  }, 3000);
 }
 
 autoIncrementSlides();
 
-function renderSearch () {
-   window.location.href = "/results?location=" + searchParam.value 
+
+
+function renderSearch() {
+  const splitValue = searchParam.value.split(",");
+  const city = splitValue[0].trim().toLowerCase();
+  const state = splitValue[1].trim().toLowerCase();
+
+  window.location.href = "/results?city=" + city + "&state=" + state;
 };
 
-homeSubmitButton.addEventListener("click", renderSearch)
+homeSubmitButton.addEventListener("click", renderSearch);
