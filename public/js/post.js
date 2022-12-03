@@ -1,11 +1,13 @@
 //buttons
 var resSearch = document.getElementById("search-button");
+var postButton = document.getElementById("post-button");
 
 //form text elements
 var titleTxt = document.getElementById("ftitle");
 var bodyTxt = document.getElementById("fbody");
 var cityTxt = document.getElementById("fcity");
 var stateTxt = document.getElementById("fstate");
+var rating = document.getElementById("post-rating");
 var searchTxt = document.getElementById("fquery");
 
 resSearch.addEventListener("click", function (e) {
@@ -41,3 +43,36 @@ resSearch.addEventListener("click", function (e) {
           console.log(data);  
         })
 });
+
+// Creating a new post
+
+const createPost = async (event) => {
+    event.preventDefault();
+
+    if (titleTxt && bodyTxt && cityTxt && stateTxt) {
+      const response = await fetch(`/api/reviews`, {
+        method: 'POST',
+        body: JSON.stringify({
+            Title: titleTxt.value,
+            Body: bodyTxt.value,
+            City: cityTxt.value,
+            State: stateTxt.value,
+            Rating: rating.value,
+            DatePosted: Date.now(),
+            Foodie_User: "AliceBob", //TODO: Get from login-session
+            Resturant_ID: "ChIJo9QCaqssDogRmmJ0MAf-aeE" // TODO: Get from restaurant
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/post');
+      } else {
+        alert('Failed to create post');
+      }
+    }
+  };
+
+  postButton.addEventListener("click", createPost)

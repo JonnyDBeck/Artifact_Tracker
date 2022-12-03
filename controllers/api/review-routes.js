@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Foodie, Review, Resturant } = require('../../models');
 
-// The `/api/foodies` endpoint
+// The `/api/reviews` endpoint
 
 router.get('/', async (req, res) => {
   // find all reviews
@@ -48,9 +48,11 @@ router.post('/', async (req, res) => {
     }
   */
       try {
+        console.log("body: ", req.body)
         const reviewData = await Review.create(req.body);
         res.status(200).json(reviewData);
       } catch (err) {
+        console.log("error: ", err)
         res.status(400).json(err);
       }    
 });

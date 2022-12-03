@@ -2,6 +2,18 @@
 
 <label for="ftitle">Title: <i>(Max 50 characters)</i></label>
 <input type="text" id="ftitle" name="ftitle" minlength="1" maxlength="50"><br><br>
+<label for="rating">Rating</label>
+<select name="rating" id="post-rating">
+    <option value="5" selected>5.0</option>
+    <option value="4.5">4.5</option>
+    <option value="4">4.0</option>
+    <option value="3.5">3.5</option>
+    <option value="3">3.0</option>
+    <option value="2.5">2.5</option>
+    <option value="2">2.0</option>
+    <option value="1.5">1.5</option>
+    <option value="1">1.0</option>
+</select><br><br>
 <label for="fname">Body: <i>(Max 255 characters)</i></label>
 <input type="text" id="fbody" name="fbody"  minlength="1" maxlength="50"><br><br>
 
@@ -9,17 +21,16 @@
 
 <label for="fcity">Current City</label>
 <input type="text" id="fcity" name="fcity">
-<label for="fstate">Current State</label>
+<label for="fstate" style="margin-left: 40px;">Current State</label>
 <input type="text" id="fstate" name="fstate">
-<br>
-<section>
+<br><br>
+{{!-- <section>
     <label for="fquery">Search for the resturant</label><br>
     <input type="text" id="fquery" name="fquery">
     <button id="search-button" class="search-button">Search</button>
     <div id="querRes" class="querRes"></div>
-</section>
-
-<br><br><button id="post-button" class="post-button">POST!</button>
+</section> --}}
+<button id="post-button" class="post-button">POST!</button>
 
 
 
