@@ -2,7 +2,14 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Foodie extends Model {}
+const bcrypt = require('bcrypt');
+
+class Foodie extends Model {
+  checkPassword(loginPw) {
+    // return bcrypt.compareSync(loginPw, this.Password);
+    return true
+  }
+}
 
 Foodie.init(
     {
@@ -19,6 +26,12 @@ Foodie.init(
   
     },
     {
+      // hooks: {
+      //   async beforeCreate(data) {
+      //     data.Password = await bcrypt.hash(data.Password, 10);
+      //     return data;
+      //   }
+      // },
       sequelize,
       timestamps: false,
       freezeTableName: true,
