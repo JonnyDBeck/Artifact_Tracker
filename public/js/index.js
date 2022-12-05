@@ -37,8 +37,8 @@ function autoIncrementSlides() {
 
 autoIncrementSlides();
 
-function renderSearch () {
-   window.location.href = "/results?location=" + searchParam.value 
+async function renderSearch () {
+  window.location.href = "/results?location=" + searchParam.value;
 };
 
 homeSubmitButton.addEventListener("click", renderSearch)

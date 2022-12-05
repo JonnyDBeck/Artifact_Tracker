@@ -1,3 +1,8 @@
-
-<h1>hi</h1>
-
+<h1>hello</h1>
+{{#each resturants as |resturant| }}
+<div id = "resultsContainer" class="results">
+    <h1>{{Resturant.Name}}</h1>
+    <h2>{{Resturant.City}}</h2>
+    <h2>{{Resturant.State}}</h2>
+</div>
+{{/each}}
